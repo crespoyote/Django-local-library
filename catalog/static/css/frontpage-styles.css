@@ -1,0 +1,53 @@
+/* frontpage-styles.css */
+
+/* Estilos generales para la lista */
+.lista {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Regla general para el cuadrado amarillo */
+.lista li::before {
+    content: attr(data-count); /* Utiliza el valor de data-count como contenido del cuadrado */
+    display: inline-block;
+    width: 20px; /* Ajusta según sea necesario */
+    height: 20px; /* Ajusta según sea necesario */
+    background-color: yellow;
+    color: blue;
+    margin-right: 5px; /* Espacio entre el cuadrado y el texto */
+    text-align: center;
+    line-height: 20px; /* Ajusta según sea necesario */
+    font-weight: bold; /* Texto en negrita en el cuadrado */
+    font-size: 14px;
+  }
+  
+
+  
+/* Estilo base para ambos botones */
+.sidebar-nav li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff; /* Color del texto */
+    background-color: #333; /* Color de fondo */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease; /* Transición de color de fondo */
+  }
+  
+  /* Estilo específico para el botón de login */
+  .sidebar-nav li.login a {
+    background-color: #4caf50; /* Cambiar color de fondo para el botón de login */
+  }
+  
+  /* Estilo específico para el botón de logout */
+  .sidebar-nav li.logout a {
+    background-color: #f44336; /* Cambiar color de fondo para el botón de logout */
+  }
+  
+  /* Cambiar color de fondo al pasar el ratón sobre los botones */
+  .sidebar-nav li a:hover {
+    background-color: #555;
+  }
+  
+  

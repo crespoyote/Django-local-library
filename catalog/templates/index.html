@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+  <title>Index</title>
+{% endblock %}
+
+{% block content %}
+  <!-- Agrega la siguiente línea para cargar archivos estáticos -->
+  {% load static %}
+
+  <!-- Enlaza tu archivo CSS -->
+  <link rel="stylesheet" href="{% static 'css/frontpage-styles.css' %}" />
+
+  <h1>Local Library Home</h1>
+  <p>
+    Welcome to LocalLibrary, a website developed by
+    <em>Mozilla Developer Network</em>!
+  </p>
+  <h2>Dynamic content</h2>
+  <p>The library has the following record counts:</p>
+  <ul class="lista">
+    <li class="book-count" data-count="{{ 1 }}"><strong>Books:</strong> {{ num_books }}</li>
+    <li class="copy-count" data-count="{{ 2 }}"><strong>Copies:</strong> {{ num_instances }}</li>
+    <li class="copy-available-count" data-count="{{ 3 }}"><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li class="author-count" data-count="{{ 4 }}"><strong>Authors:</strong> {{ num_authors }}</li>
+    <li class="genre-cunt" data-count="{{ 5 }}"><strong>Genres:</strong> {{ num_genres }}</li>
+    <li class="books-containing-count" data-count="{{ 6 }}"><strong>Books containing "a"</strong> {{ num_books_containing_word }}</li>
+  </ul>
+
+  <p>
+    You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.
+  </p>
+{% endblock %}

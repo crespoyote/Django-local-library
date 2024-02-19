@@ -1,0 +1,3 @@
+admin: alfonso, 010101
+user: user, user1234
+librarian: librarian, book1234
