@@ -102,7 +102,7 @@ DATABASES = {'default': db_from_env}
 
 POSTGRESQL_URL='postgres://alumnodb:alumnodb@localhost:5432/psi'
 
-NEON_URL='postgresql://alfonsocrespobelda:************@ep-soft-waterfall-a2za7ok2.eu-central-1.aws.neon.tech/alumnodb?sslmode=require'
+NEON_URL='postgresql://alfonsocrespobelda:Patataman102@ep-soft-waterfall-a2za7ok2.eu-central-1.aws.neon.tech/alumnodb?sslmode=require'
 
 
 # To see the current value just type echo $TESTING
