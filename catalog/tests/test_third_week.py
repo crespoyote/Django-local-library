@@ -206,7 +206,7 @@ class ThirdWeekTests(TestCase):
     def test_html_css(self):
         response = self.client.get(reverse('index'))
         self.assertIn(b'Login </button></li>', response.content)
-        u  = User.objects.get(username=user)
+        u = User.objects.get(username=user)
         loginDict = {}
         loginDict["username"] = user
         loginDict["password"] = password

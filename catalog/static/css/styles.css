@@ -4,3 +4,23 @@
     list-style: none;
   }
   
+  .login-button {
+    background-color: #4CAF50; /* Color de fondo verde, puedes cambiarlo */
+    color: white; /* Color del texto blanco, puedes cambiarlo */
+    padding: 10px 20px; /* Ajustes de relleno (top-bottom left-right), puedes ajustarlo según tus preferencias */
+    border: none; /* Sin borde, puedes cambiarlo según tus necesidades */
+    border-radius: 5px; /* Bordes redondeados, puedes ajustarlo según tus preferencias */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón, puedes cambiarlo según tus preferencias */
+  }
+  
+  /* Estilos para el botón de cierre de sesión (Logout) */
+  .logout-button {
+    background-color: #f44336; /* Color de fondo rojo, puedes cambiarlo */
+    color: white; /* Color del texto blanco, puedes cambiarlo */
+    padding: 10px 20px; /* Ajustes de relleno (top-bottom left-right), puedes ajustarlo según tus preferencias */
+    border: none; /* Sin borde, puedes cambiarlo según tus necesidades */
+    border-radius: 5px; /* Bordes redondeados, puedes ajustarlo según tus preferencias */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón, puedes cambiarlo según tus preferencias */
+  }
+  
+  

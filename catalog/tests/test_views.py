@@ -313,6 +313,12 @@ class AuthorCreateViewTest(TestCase):
             content_type=content_typeAuthor,
         )
 
+        #segun el test de los profes me dicen que cambie los permisos
+        test_user2.is_staff = True
+        permission = Permission.objects.get(codename='can_mark_returned')
+        test_user2.user_permissions.add(permission)
+        test_user2.save()
+
         test_user2.user_permissions.add(permAddAuthor)
         test_user2.save()
         
@@ -355,6 +361,15 @@ class AuthorCreateViewTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertTrue(response.url.startswith('/catalog/author/'))
     
+    def test_form_date_of_death_initially_set_to_expected_date(self):
+        login = self.client.login(
+            username='testuser2', password='2HJ1vRV0Z&3iD')
+        response = self.client.get(reverse('author-create'))
+        self.assertEqual(response.status_code, 200)
 
-
+        expected_initial_date = datetime.date(2023, 11, 11)
+        response_date = response.context['form'].initial['date_of_death']
+        response_date = datetime.datetime.strptime(
+            response_date, "%d/%m/%Y").date()
+        self.assertEqual(response_date, expected_initial_date)
 
