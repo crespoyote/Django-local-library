@@ -106,14 +106,14 @@ NEON_URL='postgresql://alfonsocrespobelda:dfnt31knp7am37pqh6pc6y1ukgu4wp6e8zg8me
 
 
 # To see the current value just type echo $TESTING
-if 'TESTING' in os.environ:
-    db_from_env = dj_database_url.config(default=POSTGRESQL_URL,
-    conn_max_age=500)
-else:
-    db_from_env = dj_database_url.config(default=NEON_URL,
-    conn_max_age=500)
+# if 'TESTING' in os.environ:
+#    db_from_env = dj_database_url.config(default=POSTGRESQL_URL,
+#    conn_max_age=500)
+#else:
+#    db_from_env = dj_database_url.config(default=NEON_URL,
+#    conn_max_age=500)
 
-DATABASES['default'].update(db_from_env)
+#DATABASES['default'].update(db_from_env)
 
 
 # Password validation
