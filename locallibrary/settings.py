@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY =
 # 'django-insecure-&psk#na5l=p3q8_a+-$4w1f^lt3lx1c@d*p4x$ymm_rn7pwb87'
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 
                             'django-insecure-&psk#na5l=p3q8_a+-$4w1f^lt3lx1c@d*p4x$ymm_rn7pwb87')
 
 
@@ -96,10 +96,24 @@ DATABASES = {
 }
 
 db_from_env = dj_database_url.config(
-    default='postgres://alumnodb:alumnodb@localhost:5432/psi', 
-    conn_max_age=500)
+    default='postgres://alumnodb:alumnodb@localhost:5432/psi', conn_max_age=500)
 
 DATABASES = {'default': db_from_env}
+
+POSTGRESQL_URL='postgres://alumnodb:alumnodb@localhost:5432/psi'
+
+NEON_URL='postgresql://alfonsocrespobelda:************@ep-soft-waterfall-a2za7ok2.eu-central-1.aws.neon.tech/alumnodb?sslmode=require'
+
+
+# To see the current value just type echo $TESTING
+if 'TESTING' in os.environ:
+    db_from_env = dj_database_url.config(default=POSTGRESQL_URL,
+    conn_max_age=500)
+else:
+    db_from_env = dj_database_url.config(default=NEON_URL,
+    conn_max_age=500)
+
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
